@@ -1,0 +1,4 @@
+--container-architecture linux/arm64
+--secret-file .secrets
+--artifact-server-path ./artifacts
+-P ubuntu-latest=catthehacker/ubuntu:act-latest

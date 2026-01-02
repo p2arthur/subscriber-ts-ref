@@ -4,37 +4,35 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  pages: write
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
-  bot-token:
-    name: Generate bot token
+  generate_token:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
+    name: Generate Bot Token
     outputs:
-      bot-token: ${{ steps.app-token.outputs.token }}
-    steps:
-      - name: Create GitHub App token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.BOT_APP_ID }}
-          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
-          installation-id: ${{ secrets.BOT_APP_INSTALLATION_ID }}
+      bot_token_out: ${{ steps.app_token.outputs.token }}
 
-  call-shared:
-    name: Call shared on-merge-main
-    needs: bot-token
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
+    steps:
+      - name: Create GitHub App Token
+        uses: actions/create-github-app-token@v1
+        id: app_token
+        with:
+          app_id: ${{ secrets.BOT_ID }}
+          private_key: ${{ secrets.BOT_SK }}
+
+  on_main_merge:
+    needs: generate_token
+    name: Run On Merge Main Workflow
     uses: algorandfoundation/algokit-shared-config/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
-    with:
-      node-version: 20
-      publish-docs: true
     secrets:
-      BOT_TOKEN: ${{ needs.bot-token.outputs.bot-token }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      BOT_TOKEN: ${{ needs.generate_token.outputs.bot_token_out }}
