@@ -15,7 +15,6 @@ permissions:
 
 jobs:
   on_main_merge:
-    needs: generate_token
     name: Run On Merge Main Workflow
     uses: algorandfoundation/algokit-shared-config/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
     secrets:
