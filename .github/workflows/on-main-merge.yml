@@ -14,36 +14,12 @@ permissions:
   pull-requests: write
 
 jobs:
-  generate_token:
-    runs-on: ubuntu-latest
-    name: Generate Bot Token
-    outputs:
-      BOT_TOKEN: ${{ steps.app_token.outputs.token }}
-
-    steps:
-      - name: Create GitHub App Token
-        uses: actions/create-github-app-token@v1
-        id: app_token
-        with:
-          app_id: ${{ secrets.BOT_ID }}
-          private_key: ${{ secrets.BOT_SK }}
-
-      - name: Verify Token Generation
-        run: |
-          if [ -z "${{ steps.app_token.outputs.token }}" ]; then
-            echo "❌ CRITICAL: Token was NOT generated. Check BOT_ID/BOT_SK secrets."
-            exit 1
-          else
-            echo "✅ Token generated successfully (Masked)."
-          fi
-
   on_main_merge:
     needs: generate_token
     name: Run On Merge Main Workflow
-    # 👇 FIXED: Replaced '...' with the full path '.github/workflows'
     uses: algorandfoundation/algokit-shared-config/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
-    with:
-      BOT_TOKEN: "TEST_TOKEN_STRING_123"
     secrets:
+      BOT_ID: ${{ secrets.BOT_ID }}
+      BOT_SK: ${{ secrets.BOT_SK }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
