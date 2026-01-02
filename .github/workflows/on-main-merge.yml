@@ -40,9 +40,10 @@ jobs:
   on_main_merge:
     needs: generate_token
     name: Run On Merge Main Workflow
-    uses: algorandfoundation/algokit-shared-config/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
+    uses: algorandfoundation/algokit-shared-config/.../on-merge-main.yml@ref/consistency-ref-implementation
     with:
-      BOT_TOKEN: "${{ needs.generate_token.outputs.BOT_TOKEN }}"
+      # 👇 HARDCODE THIS TEMPORARILY
+      BOT_TOKEN: "TEST_TOKEN_STRING_123"
     secrets:
-      NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
-      GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
