@@ -11,15 +11,16 @@
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
     "lint": "tsc --noEmit --pretty false",
-    "docs:generate": "typedoc"
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/github": "^10.0.0",
     "@semantic-release/npm": "^12.0.0",
     "@semantic-release/release-notes-generator": "^12.0.0",
-    "typedoc": "^0.25.0",
     "semantic-release": "^23.0.0",
+    "typedoc": "^0.28.15",
+    "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "^5.4.0",
     "vitest": "^1.5.0"
   }

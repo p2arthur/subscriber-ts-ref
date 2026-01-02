@@ -1,3 +1,4 @@
 .secrets
 /artifacts
 /node_modules
+/docs

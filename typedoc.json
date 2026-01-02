@@ -1,6 +1,16 @@
 {
   "entryPoints": ["src/index.ts"],
+  "plugin": ["typedoc-plugin-markdown"],
+  "outputs": [
+    { "name": "html", "path": "docs/_html" },
+    { "name": "markdown", "path": "docs/code" }
+  ],
+  "cleanOutputDir": true,
+
   "out": "docs",
   "excludePrivate": true,
-  "excludeProtected": true
+  "excludeProtected": true,
+  "highlightLanguages": ["typescript", "python", "json", "bash", "js", "yaml"],
+  "excludeReferences": true,
+  "includeHierarchySummary": true
 }
