@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate Bot Token
     outputs:
-      bot_token_out: ${{ steps.app_token.outputs.token }}
+      BOT_TOKEN: ${{ steps.app_token.outputs.token }}
 
     steps:
       - name: Create GitHub App Token
@@ -35,4 +35,4 @@ jobs:
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      BOT_TOKEN: ${{ needs.generate_token.outputs.bot_token_out }}
+      BOT_TOKEN: ${{ needs.generate_token.outputs.BOT_TOKEN }}
