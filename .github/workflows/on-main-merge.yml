@@ -28,6 +28,15 @@ jobs:
           app_id: ${{ secrets.BOT_ID }}
           private_key: ${{ secrets.BOT_SK }}
 
+      - name: Verify Token Generation
+        run: |
+          if [ -z "${{ steps.app_token.outputs.token }}" ]; then
+            echo "❌ CRITICAL: Token was NOT generated. Check BOT_ID/BOT_SK secrets."
+            exit 1
+          else
+            echo "✅ Token generated successfully (Masked)."
+          fi
+
   on_main_merge:
     needs: generate_token
     name: Run On Merge Main Workflow
