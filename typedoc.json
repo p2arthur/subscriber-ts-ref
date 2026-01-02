@@ -6,8 +6,6 @@
     { "name": "markdown", "path": "docs/code" }
   ],
   "cleanOutputDir": true,
-
-  "out": "docs",
   "excludePrivate": true,
   "excludeProtected": true,
   "highlightLanguages": ["typescript", "python", "json", "bash", "js", "yaml"],
