@@ -1,0 +1,40 @@
+name: On Main Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bot-token:
+    name: Generate bot token
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    outputs:
+      bot-token: ${{ steps.app-token.outputs.token }}
+    steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+          installation-id: ${{ secrets.BOT_APP_INSTALLATION_ID }}
+
+  call-shared:
+    name: Call shared on-merge-main
+    needs: bot-token
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
+    with:
+      node-version: 20
+      publish-docs: true
+    secrets:
+      BOT_TOKEN: ${{ needs.bot-token.outputs.bot-token }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
