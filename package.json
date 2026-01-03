@@ -11,6 +11,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "vitest run --coverage --passWithNoTests",
     "lint": "tsc --noEmit --pretty false",
+    "typecheck": "tsc --noEmit --pretty false",
     "docs": "typedoc"
   },
   "devDependencies": {
