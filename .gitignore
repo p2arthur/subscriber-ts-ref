@@ -1,4 +1,5 @@
 .secrets
 /artifacts
 /node_modules
-/docs
+/docs/_html/
+/coverage/
