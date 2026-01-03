@@ -6,19 +6,8 @@ on:
       - "**"
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Test
-        run: npm test
-      - name: Check docs
-        run: npm run docs:generate
+  on_pull_request:
+    name: Run On Pull Request Workflow
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/on-pull-request.yml@ref/consistency-ref-implementation
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
