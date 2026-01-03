@@ -8,6 +8,6 @@ on:
 jobs:
   on_pull_request:
     name: Run On Pull Request Workflow
-    uses: algorandfoundation/algokit-shared-config/.github/workflows/on-pull-request.yml@ref/consistency-ref-implementation
+    uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-pull-request.yml@ref/consistency-ref-implementation
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
