@@ -16,7 +16,7 @@ permissions:
 jobs:
   on_main_merge:
     name: Run On Merge Main Workflow
-    uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-main.yml@ref/consistency-ref-implementation
+    uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-main.yml@main
     with:
       project-type: typescript
     secrets:
