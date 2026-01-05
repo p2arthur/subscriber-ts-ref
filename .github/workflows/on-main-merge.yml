@@ -18,7 +18,7 @@ jobs:
     name: Run On Merge Main Workflow
     uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-main.yml@main
     with:
-      project-type: typescript
+      project_type: typescript
     secrets:
       BOT_ID: ${{ secrets.BOT_ID }}
       BOT_SK: ${{ secrets.BOT_SK }}
