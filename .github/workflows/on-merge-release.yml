@@ -1,4 +1,4 @@
-name: On Release Merge
+name: On Release Merge Check
 
 on:
   push:
@@ -17,7 +17,6 @@ jobs:
   on_merge_release:
     name: Run On Merge Release Workflow
     uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-release.yml@main
-    with:
     secrets:
       BOT_ID: ${{ secrets.BOT_ID }}
       BOT_SK: ${{ secrets.BOT_SK }}
