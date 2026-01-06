@@ -14,13 +14,10 @@ permissions:
   pull-requests: write
 
 jobs:
-  on_main_merge:
-    name: Run On Merge Main Workflow
+  on_merge_release:
+    name: Run On Merge Release Workflow
     uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-release.yml@main
     with:
-      project_type: typescript
     secrets:
       BOT_ID: ${{ secrets.BOT_ID }}
       BOT_SK: ${{ secrets.BOT_SK }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
