@@ -1,0 +1,26 @@
+name: On Release Merge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  pages: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  on_main_merge:
+    name: Run On Merge Main Workflow
+    uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-release.yml@main
+    with:
+      project_type: typescript
+    secrets:
+      BOT_ID: ${{ secrets.BOT_ID }}
+      BOT_SK: ${{ secrets.BOT_SK }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
