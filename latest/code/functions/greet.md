@@ -8,7 +8,7 @@
 
 > **greet**(`name`): `string`
 
-Defined in: [index.ts:2](https://github.com/p2arthur/subscriber-ts-ref/blob/de169cfb687a6bd091fe93cbc1bc9948dd62e99a/src/index.ts#L2)
+Defined in: [index.ts:2](https://github.com/p2arthur/subscriber-ts-ref/blob/1c509b40f9faa363b9c85c5feb52463a0923e8ad/src/index.ts#L2)
 
 ## Parameters
 
