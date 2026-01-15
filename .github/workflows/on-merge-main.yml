@@ -16,7 +16,7 @@ permissions:
 jobs:
   on_main_merge:
     name: Run On Merge Main Workflow
-    uses: p2arthur/merged-config/.github/workflows/on-merge-main.yml@vX.Y.Z
+    uses: p2arthur/merged-config/.github/workflows/on-merge-main.yml@main
     with:
       project-type: node # use node or python
       # publish-docs: true         # optional, defaults true
