@@ -16,11 +16,14 @@ permissions:
 jobs:
   on_main_merge:
     name: Run On Merge Main Workflow
-    uses: p2arthur/algokit-shared-config-forked/.github/workflows/on-merge-main.yml@main
+    uses: p2arthur/merged-config/.github/workflows/on-merge-main.yml@vX.Y.Z
     with:
-      project_type: typescript
+      project-type: node # use node or python
+      # publish-docs: true         # optional, defaults true
+      # publish-devportal: false   # optional
     secrets:
       BOT_ID: ${{ secrets.BOT_ID }}
       BOT_SK: ${{ secrets.BOT_SK }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed for installs/publish
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # optional; defaults to GITHUB_TOKEN
+
