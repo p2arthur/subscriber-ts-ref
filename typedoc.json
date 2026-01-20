@@ -5,6 +5,9 @@
     { "name": "html", "path": "docs/_html" },
     { "name": "markdown", "path": "docs/code" }
   ],
+  "navigationLinks": {
+    "Examples": "../examples/index.html"
+  },
   "cleanOutputDir": true,
   "excludePrivate": true,
   "excludeProtected": true,

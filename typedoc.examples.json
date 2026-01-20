@@ -4,10 +4,10 @@
   "entryPoints": ["examples/*.ts"],
   "entryPointStrategy": "expand",
   "out": "docs/examples",
-  "tsconfig": "tsconfig.json",
+  "tsconfig": "tsconfig.examples.json",
   "readme": "examples/README.md",
   "navigationLinks": {
-    "API Docs": "/"
+    "API Docs": "../_html/index.html"
   },
   "cleanOutputDir": true,
   "excludeReferences": true,
