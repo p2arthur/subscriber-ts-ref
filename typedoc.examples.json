@@ -5,7 +5,7 @@
   "entryPointStrategy": "expand",
   "out": "docs/examples",
   "tsconfig": "tsconfig.json",
-  "readme": "examples/index.md",
+  "readme": "examples/README.md",
   "navigationLinks": {
     "API Docs": "/"
   },
