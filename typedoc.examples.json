@@ -4,7 +4,7 @@
   "entryPoints": ["examples/*.ts"],
   "entryPointStrategy": "expand",
   "out": "docs/examples",
-  "tsconfig": "tsconfig.examples.json",
+  "tsconfig": "tsconfig.json",
   "readme": "examples/README.md",
   "navigationLinks": {
     "API Docs": "../_html/index.html"
