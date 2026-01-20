@@ -13,5 +13,6 @@
   "excludeReferences": true,
   "includeHierarchySummary": false,
   "gitRevision": "main",
-  "highlightLanguages": ["typescript", "bash"]
+  "highlightLanguages": ["typescript", "bash"],
+  "skipErrorChecking": true
 }
