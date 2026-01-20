@@ -5,7 +5,6 @@
     { "name": "html", "path": "docs/_html" },
     { "name": "markdown", "path": "docs/code" }
   ],
-  "basePath": "/subscriber-ts-ref",
   "navigationLinks": {
     "Examples": "examples/index.html"
   },
