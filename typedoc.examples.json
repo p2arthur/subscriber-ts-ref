@@ -4,6 +4,7 @@
   "entryPoints": ["examples/*.ts"],
   "entryPointStrategy": "expand",
   "out": "docs/_html/examples",
+  "basePath": "/subscriber-ts-ref",
   "tsconfig": "tsconfig.json",
   "readme": "examples/README.md",
   "navigationLinks": {
