@@ -1,11 +1,11 @@
 {
-  "generated": "2026-01-15T01:28:09.551Z",
+  "generated": "2026-01-22T20:16:17.484Z",
   "generator": {
     "tool": "unknown",
     "version": "unknown"
   },
   "metadata": {
     "repository": "p2arthur/subscriber-ts-ref",
-    "commit": "1c509b40f9faa363b9c85c5feb52463a0923e8ad"
+    "commit": "8af2a544dd1dab1d35d7ef4be5d1b9c92bb72d4e"
   }
 }
