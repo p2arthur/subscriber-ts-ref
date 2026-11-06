@@ -1,3 +1,27 @@
+# TypeScript Workflow Reference Package
+
+A minimal TypeScript package used to exercise shared build, TypeDoc, test, and release workflows.
+
+The sample source and greet test make the workflow contract concrete. The repository is not the upstream Algorand subscriber implementation, despite its historical package name.
+
+## Start reading
+
+- [`src/index.ts`](src/index.ts)
+- [`tests/`](tests/)
+
+## Development
+
+Use Node.js and npm compatible with the versions recorded in the package manifest and lockfile. Each package is installed from its own directory.
+
+The dependency manifest is [`package.json`](package.json). It does not define a complete development-server command. Install dependencies with `npm ci` from its directory, then inspect the source entry point and configuration.
+
+## Existing project notes
+
+The original guide below preserves project-specific context, credits, examples, and historical setup details. Referenced providers, branches, and deployments may have changed since it was written.
+
+<details>
+<summary>Read the original project documentation</summary>
+
 # algokit-subscriber-ts-reference
 
 This repository is a minimal TypeScript library whose CI/CD, docs, and release flows are delegated to the reusable workflows in `p2arthur/algokit-shared-config-forked`. Only the project-specific contract (package name, versioning rules, and tokens) lives here; the heavy lifting is centralized in the shared config so every repo stays consistent.
@@ -26,3 +50,5 @@ This repository is a minimal TypeScript library whose CI/CD, docs, and release f
 
 ## Local scripts
 Use `npm run build`, `npm test`, `npm run lint`, and `npm run docs:generate`. The shared workflows call these entrypoints during CI to keep local and remote behavior aligned.
+
+</details>
